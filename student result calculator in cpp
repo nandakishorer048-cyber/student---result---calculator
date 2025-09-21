@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>       //****************************STUDENT RESULT CALCULATOR****************************************** */
+using namespace std;
+
+class Student {
+    int rollNo;
+    string name;
+    float marks[4]; 
+    float total;
+    float average;
+    char grade;
+
+public:
+    void value() {
+        cout << "\nEnter Roll Number: ";
+        cin >> rollNo;
+        cout << "Enter Name: ";
+        cin>>name;
+
+        total = 0;
+        for (int i = 0; i < 4; i++) {
+            cout << "Enter marks in subject " << i + 1 << ": ";
+            cin >> marks[i];
+            total = total + marks[i];
+        }
+
+        average = total / 4.0;
+
+        if (average >= 90)
+            grade = 'A';
+        else if (average >= 75)
+            grade = 'B';
+        else if (average >= 50)
+            grade = 'C';
+        else
+            grade = 'F';
+    }
+
+    void g() {
+        cout << "\n--- Student Result ---\n";
+        cout << "Roll No: " << rollNo << endl;
+        cout << "Name   : " << name << endl;
+        for (int i = 0; i < 3; i++) {
+            cout << "Marks in Subject " << i + 1 << ": " << marks[i] << endl;
+        }
+        cout << "Total: " << total << endl;
+        cout << "Percentage : " << average <<endl;
+        cout << "Grade     : " << grade << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    Student students[50]; // maximum 50 students
+    for (int i = 0; i < n; i++) {
+        cout << "\nEnter details for Student " << i + 1 << ":\n";
+        students[i].value();
+    }
+
+    cout << "\n\n*********************************** Student Results are : **********************************\n";
+    for (int i = 0; i < n; i++) {
+        students[i].g();
+    }
+
+    return 0;
+}
