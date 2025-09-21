@@ -40,11 +40,11 @@ public:
         cout << "\n--- Student Result ---\n";
         cout << "Roll No: " << rollNo << endl;
         cout << "Name   : " << name << endl;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             cout << "Marks in Subject " << i + 1 << ": " << marks[i] << endl;
         }
         cout << "Total: " << total << endl;
-        cout << "Percentage : " << average <<endl;
+        cout << "average : " << average <<endl;
         cout << "Grade     : " << grade << endl;
     }
 };
@@ -54,16 +54,17 @@ int main() {
     cout << "Enter number of students: ";
     cin >> n;
 
-    Student students[50]; // maximum 50 students
+    Student students[50]; 
     for (int i = 0; i < n; i++) {
         cout << "\nEnter details for Student " << i + 1 << ":\n";
         students[i].value();
     }
 
-    cout << "\n\n*********************************** Student Results are : **********************************\n";
+    cout << "\n\n*********************************** Student Results are : ************************************\n";
     for (int i = 0; i < n; i++) {
         students[i].g();
     }
 
     return 0;
 }
+
